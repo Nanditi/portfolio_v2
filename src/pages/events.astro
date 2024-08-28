@@ -1,0 +1,34 @@
+---
+import Layout from "@layouts/Default.astro";
+import MobileSocials from "@components/home/MobileSocials.astro";
+import SummaryCard from "@components/generic/SummaryCard.astro";
+import { Button } from "@eliancodes/brutal-ui";
+import events from "@data/event.json";
+---
+
+<Layout title="Events" pageTitle="Events | Home" description="Events">
+  <main class="bg-pink p-6">
+    <MobileSocials />
+    <!-- <p>{events}</p> -->
+    <ul class='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+
+    {
+      events.map(
+        ({ title, description, date, image, eventlink, eventlinktext }) => (
+         <li> <SummaryCard
+            title={title}
+            imgAlt={title}
+            imgSrc={image}
+            description={description}
+          >
+            <div class="flex justify-end my-4">
+              <Button href={eventlink} target={"_blank"}>View &rarr;</Button>
+            </div>
+          </SummaryCard>
+        </li>
+        )
+      )
+    }
+    </ul>
+  </main>
+</Layout>
