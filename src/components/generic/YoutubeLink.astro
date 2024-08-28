@@ -1,0 +1,7 @@
+---
+import { Tweet, Vimeo, YouTube } from 'astro-embed';
+const frontmatter = Astro.props
+const video = frontmatter.videoLink;
+---
+
+<YouTube id={video} />

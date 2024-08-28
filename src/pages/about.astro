@@ -1,16 +1,20 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Default.astro';
+import MobileSocials from '@components/home/MobileSocials.astro';
+import { Pill } from '@eliancodes/brutal-ui';
+import { Button } from '@eliancodes/brutal-ui';
+import { Card } from '@eliancodes/brutal-ui';
 
 
 ---
 
 <Layout
-  title='About'
-  description='Brutal Blog | On this page you can find a collection of blogposts'
-  pageTitle='About'
+  title='Home'
+  pageTitle='Brutal Theme | Home'
+  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
 >
-  <main class='bg-green p-6'>
-  
+  <main class='bg-pink p-6'>
+    <MobileSocials />
+    
   </main>
 </Layout>
