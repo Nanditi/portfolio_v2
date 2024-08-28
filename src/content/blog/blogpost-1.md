@@ -9,6 +9,7 @@ tags:
 imgUrl: '../../assets/astro.jpeg'
 description: Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, vox nocte sedesque, decimo. Omnia esse, quam sive; conplevit illis indestrictus admovit dedit sub quod protectus, impedit non.
 layout: '../../layouts/BlogPost.astro'
+
 ---
 
 ## Deorum petiit ignis
@@ -45,3 +46,5 @@ Insistere pugno. Cum morae vigilantibus dulces Cycnus: neque cum sororis.
 
 Hac Aestas solet docebo tandem tamquam omnis vitiantur mitte, vatis in animique
 infelix passimque. Superasset onus.
+
+![A starry night sky.](../../assets/codedrift.png)
