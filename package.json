@@ -1,15 +1,15 @@
 {
-  "name": "brutal",
+  "name": "brutal-nanditi",
   "version": "1.2.0",
   "private": false,
   "type": "module",
   "packageManager": "pnpm@8.6.0",
   "author": {
-    "name": "Elian Van Cutsem",
-    "email": "hello@elian.codes",
-    "url": "https://www.elian.codes/"
+    "name": "Nanditi",
+    "email": "nanditi@ajaibghar.com",
+    "url": "https://nanditi.com"
   },
-  "homepage": "https://brutal.elian.codes",
+  "homepage": "https://nanditi.com",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
