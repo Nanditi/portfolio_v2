@@ -19,7 +19,9 @@ const socialIcons = [
     url: 'https://www.youtube.com/@nanditi',
     icon: 'i-uil-youtube',
   },
-  { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
+  { name: 'LinkedIn', 
+  url: 'https://www.linkedin.com/in/nanditi/', 
+  icon: 'i-uil-linkedin' },
 ];
 
 const { pageTitle } = Astro.props;
@@ -28,7 +30,9 @@ const { pageTitle } = Astro.props;
 <header class='border-b-4 border-black flex justify-between p-6 items-center'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+    <!-- <p class='righteous md:text-5xl'>Nanditi</p> -->
+   <!-- icon for home icon -->
+   <div class:list={['i-uil-sport', 'w-8 h-8']} />
   </a>
   <nav class='hidden md:inline-block'>
     <h2 class='hidden'>Navigation</h2>
