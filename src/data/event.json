@@ -6,7 +6,7 @@
       "date": "2019-01-01",
       "image": "https://via.placeholder.com/150",
       "eventlink": "https://www.google.com",
-      "eventlinktext": "More Info",
+      "eventlinktext": "this event",
       "videolink": "https://www.youtube.com"
     },
 
@@ -17,7 +17,7 @@
       "date": "2019-02-02",
       "image": "https://via.placeholder.com/150",
       "eventlink": "https://www.google.com",
-      "eventlinktext": "More Info",
+      "eventlinktext": "this event",
       "videolink": "https://www.youtube.com"
     },
 
@@ -28,7 +28,7 @@
       "date": "2019-03-03",
       "image": "https://via.placeholder.com/150",
       "eventlink": "https://www.google.com",
-      "eventlinktext": "More Info",
+      "eventlinktext": "this event",
       "videolink": "https://www.youtube.com"
     }
   ]
