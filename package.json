@@ -26,6 +26,7 @@
     "astro": "^4.14.2",
     "astro-embed": "^0.7.2",
     "astro-font": "^0.0.80",
+    "astro-navbar": "^2.3.3",
     "satori": "^0.5.0",
     "satori-html": "^0.3.2"
   },

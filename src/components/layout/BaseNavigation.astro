@@ -1,4 +1,6 @@
 ---
+import BaseNavigation2 from './BaseNavigation2.astro';
+
 interface Props {
   pageTitle?: string;
 }
@@ -68,10 +70,13 @@ const { pageTitle } = Astro.props;
       }
     </ul>
   </nav>
-  <nav class='md:hidden flex'>
+  <nav class='md:hidden flex flex-row'>
     <h2 class='hidden'>Mobile Navigation</h2>
-    <ul>
-      <li><a href='/blog/'>Blog</a></li>
-    </ul>
+    <!-- <ul>
+      <li><a href='/projects/'>Projects</a></li>
+      <li><a href='/events/'>Events</a></li>
+      <li><a href='/about/'>About</a></li>
+    </ul> -->
+    <BaseNavigation2 />
   </nav>
 </header>
