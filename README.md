@@ -120,3 +120,5 @@ If you need more from this theme, don't hesitate to open an issue or reach out t
 
 ICON LIBRARY - https://icon-sets.iconify.design/uil/
 PLUG-IN ADDED FOR MDX (YT Embeds++) - https://astro-embed.netlify.app/
+DOMAIN VIA WIX (nanditi.com) - via gmail creds
+HOSTED ON NETLIFY (nanditi.netlify.app) - via github signin
