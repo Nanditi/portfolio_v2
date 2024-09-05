@@ -9,24 +9,25 @@ import SummaryCard from "@components/generic/SummaryCard.astro";
 import { Image } from "astro:assets";
 
 const communities = [
-  { name: "Astro", url: "https://astro.build/" },
-  { name: "UnoCSS", url: "https://uno.antfu.me/" },
+  { name: "code.drift", url: "https://youtu.be/AlO_u2SC0jE" },
+  { name: "lab59", url: "https://docs.google.com/document/d/1JLik1bdX64cG-GEccpP7e6nbGDTYbCVkZBr3YLcIKho/edit?usp=sharing" },
+  // have to replace this link w/ something that shows all of it together (the doc, insta event posters, lab photos)
   {
-    name: "Content Collections",
-    url: "https://docs.astro.build/en/guides/content-collections/",
+    name: "blob labs",
+    url: "https://youtu.be/6N1Rv1qy8uE",
   },
-  { name: "RSS", url: "https://docs.astro.build/en/guides/rss/" },
+  { name: "dra.ft", url: "https://dra-ft.site/" },
   {
-    name: "Sitemap",
-    url: "https://docs.astro.build/en/guides/integrations-guide/sitemap/",
+    name: "RRAP hub",
+    url: "https://photos.app.goo.gl/euWvkj2LGqrnXR5R9",
+    // have to add more photos of happenings, community stuff, us
   },
-  { name: "Vercel", url: "https://vercel.com" },
-  { name: "TypeScript", url: "https://www.typescriptlang.org/" },
 ];
 
 const seeMore = [ 
-{ name: "Reach out on IG", url: "https://instagram.com/nanditi.k/" },
-{ name: "Check out my musical tinkering", url: "https://uno.antfu.me/" },
+{ name: "reach out to me on IG", url: "https://instagram.com/nanditi.k/" },
+{ name: "check out my musical tinkering", url: "https://www.youtube.com/@nanditi" },
+{ name: "breaking linkedin by my existence", url: "https://www.linkedin.com/in/nanditi/" },
 ]
 
 import profilepic from '../assets/nksonicphoto.png';
@@ -45,13 +46,15 @@ import profilepic from '../assets/nksonicphoto.png';
       <div class="col-span-4">
         <Card color="cyan">
           <div class="flex flex-col justify-between items-start gap-4">
-            <p class="mt-4 outfit text-2xl md:text-5xl lg:text-7xl">
+            <p class="mt-1 outfit text-2xl md:text-5xl lg:text-7xl">
               nanditi khilnani
             </p>
-            <p class="mt-2 outfit text-xl md:text-3xl lg:text-5xl">
-              co-founder @ <a href="https://www.ajaibghar.com/">ajaibghar</a>
-              <!-- how do i "open link in new tab" for ajaibghar here -->
-              musician, live-coder, tech-artist art & community instigater
+            <p class="mt-1 mb-1 outfit text-xl md:text-3xl lg:text-4xl">
+              co-founder @ <a href="https://www.ajaibghar.com/" target="_blank"><u>ajaibghar</u></a>
+              <br>
+              musician, live-coder, tech-artist
+              <br> 
+              art & community instigater (gardener)
             </p>
             <!-- <Button target={'_self'} href='/blog/'>
               Check out the blog &rarr;
@@ -61,7 +64,7 @@ import profilepic from '../assets/nksonicphoto.png';
       </div>
       <div class="col-span-2">
         <Card>
-          <h2 class="text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif">
+          <h2 class="text-lg md:text-2xl lg:text-4xl mb-3 dm-serif">
             what is ajaibghar?
           </h2>
           <p class="poppins">
@@ -74,31 +77,21 @@ import profilepic from '../assets/nksonicphoto.png';
       </div>
     </section>
     <section id="about2" class="grid md:grid-cols-8 gap-8 mt-4">
-      <div class="col-span-4">
+      <div class="col-span-5">
         <Card>
           <p class="poppins">
-            Nanditi is a musician, creative-tech entrepreneur, interdisciplinary
-            artist & experience maker. She is a classically trained Indian
-            musician and live-coder, exploring the intersection of music and
-            technology through generative Raga-based electronic music and
-            soundscapes. Apart from being a performer Nanditi is also a trainer
-            and facilitator; she devises and conducts workshops on Generative
-            Music & Live-coding for all ages and experience levels. In the past,
-            she has served a long stint in technology at Google India, before
-            venturing into arts management for heritage arts & folk music of
-            Rajasthan at Jaipur Virasat Foundation and JAJAM Jaipur where she
-            led efforts on strategy, curation, events programming & community
-            building, as well as worked on ethnomusicology research and
-            grassroots initiatives for & with artist communities around the
-            state.
+  this is my millionth attempt at writing a bio. simply put, i&apos;m one of those fortunate few who hopped off the black-and-white, ultra-fancy big-tech treadmill to pave my own muddy but technicolor path as an entrepreneur + artist. like well-merged git branches, i combined the learnings from my tech career with my roots as a classical musician, the heart of an artistic tinkerer, and the genetics of good business to commit to the lofty dream of creating one&apos;s own career out of passion.
+<br>so hi, i&apos;m nanditi, a musician and creative-tech entrepreneur. as a classically trained indian musician and live-coder, i explore the intersection of music and tech through generative raga-based electronic music and soundscapes. besides performing, i lead workshops for all ages and experience levels.
+<br>i run a creative-technology studio, ajaibghar, where our work is a tasty mix of organic design, low-carb tech, and healthy artistic sensibilities. some popular showcases have been at india art fair, serendipity arts festival, wildcity, vogue india, vice media, and ACRI.
+<br>previously, i worked at google india before moving into arts management with jaipur virasat foundation and JAJAM jaipur, focusing on strategy, curation, event programming, and community building, while also conducting ethnomusicology research and supporting grassroots artist initiatives across rajasthan.
           </p>
         </Card>
       </div>
 
-      <div class="col-span-4 space-y-4">
+      <div class="col-span-3 space-y-4">
         <Card>
-          <h2 class="text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif">
-            communities
+          <h2 class="text-lg md:text-2xl lg:text-4xl mb-4 dm-serif">
+            communities i've been cultivating🪴
           </h2>
           <ul class="flex gap-4 flex-wrap">
             {
@@ -121,7 +114,7 @@ import profilepic from '../assets/nksonicphoto.png';
         </Card>
 
         <Card>
-          <h2 class="text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif">
+          <h2 class="text-lg md:text-2xl lg:text-4xl mb-4 dm-serif">
             what i'm up to?
           </h2>
           <ul class="flex gap-4 flex-wrap">
