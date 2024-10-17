@@ -2,7 +2,7 @@
 import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
 
 const navigationItems = [
-  { name: 'Home', url: '/' },
+  // { name: 'Home', url: '/' },
   { name: 'Projects', url: '/projects/' },
   { name: 'Events', url: '/events/' },
   { name: 'About', url: '/about/' },
@@ -12,7 +12,7 @@ const navigationItems = [
 <div>
   <Astronav>
     <div class="flex">
-      <MenuIcon class="w-4 h-4 text-gray-800" />
+      <MenuIcon class="w-6 h-6 text-gray-800" />
     </div>
     <MenuItems class="hidden lg:flex">
         <ul class='flex flex-col gap-3 poppins'>
@@ -20,7 +20,7 @@ const navigationItems = [
               navigationItems.map((item) => (
                 <li>
                   <a
-                    class='text-sm text-right font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
+                    class='text-sm font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
                     href={item.url}
                     title={`Go to ${item.name}`}
                   >
