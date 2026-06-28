@@ -74,34 +74,41 @@ import profilepic from '../assets/nksonicphoto.png';
             cultural strategy & community building.
           </p>
         </Card>
-    
       </section>
-    <section id="about2" class="grid md:grid-cols-8 gap-8 mt-4">
-      <div class="col-span-6">
-        <Card>
-          <p class="poppins">
-            this is my millionth attempt at writing a bio. simply put, i'm one of those fortunate few who hopped off the black-and-white, ultra-fancy big-tech treadmill to build a muddy but technicolor practice across music, code, culture, and community.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            hi, i’m nanditi — a classically trained indian musician and live-coder, working with generative raga-based electronic music, immersive soundscapes, and code-driven performances. my work often begins not with code, but with listening — to places, people, memory, and everyday life — treating listening itself as a kind of technology.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            through this, i build systems, performances, and learning spaces where sound, culture, and code come together — not as tools, but as practices.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            my approach to technology is deeply shaped by community, care, and collaboration. i work with what could be called a feminist tech ethos — building playful, inclusive environments where people can enter through curiosity rather than expertise, and where making is collective, situated, and open-ended.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            along with my tech-twin, <a href="https://computationalmama.xyz/" target="_blank" class="underline">computational mama</a>, i co-run <a href="https://www.ajaibghar.com/" target="_blank" class="underline">ajaibghar</a> — a creative-technology studio and community that creates culturally-rooted, accessible, and experimental tech-art. our work spans performances, exhibitions, and learning ecosystems, and has been showcased at india art fair, serendipity arts festival, wildcity, vogue india, vice media, and ACRI.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            my journey spans a tech career at google india, followed by grassroots work with folk artists and cultural organisations across rajasthan — experiences that continue to shape how i think about technology not as abstraction, but as something lived, shared, and deeply contextual.
-          </p>
-          <p class="poppins" style="padding-top:15px">
-            currently, i’m developing new performance formats like raga.exe, and expanding community-driven practices like code.drift — exploring what it means to design technology with care, context, and culture.
-          </p>
-        </Card>
+
+   <section id="about2" class="grid md:grid-cols-8 gap-8 mt-4">
+  <div class="col-span-6">
+    <Card>
+      <p class="poppins">
+        this is my millionth attempt at writing a bio. simply put, i'm one of those fortunate few who hopped off the black-and-white, ultra-fancy big-tech treadmill to build a muddy but technicolor practice across music, code, culture, and community.
+      </p>
+
+      <div id="expanded-bio" class="hidden md:block">
+        <p class="poppins" style="padding-top:15px">
+          hi, i’m nanditi — a classically trained indian musician and live-coder, working with generative raga-based electronic music, immersive soundscapes, and code-driven performances. my work often begins not with code, but with listening — to places, people, memory, and everyday life — treating listening itself as a kind of technology.
+        </p>
+        <p class="poppins" style="padding-top:15px">
+          through this, i build systems, performances, and learning spaces where sound, culture, and code come together — not as tools, but as practices.
+        </p>
+        <p class="poppins" style="padding-top:15px">
+          my approach to technology is deeply shaped by community, care, and collaboration. i work with what could be called a feminist tech ethos — building playful, inclusive environments where people can enter through curiosity rather than expertise, and where making is collective, situated, and open-ended.
+        </p>
+        <p class="poppins" style="padding-top:15px">
+          along with my tech-twin, <a href="https://computationalmama.xyz/" target="_blank" class="underline">computational mama</a>, i co-run <a href="https://www.ajaibghar.com/" target="_blank" class="underline">ajaibghar</a> — a creative-technology studio and community that creates culturally-rooted, accessible, and experimental tech-art. our work spans performances, exhibitions, and learning ecosystems, and has been showcased at india art fair, serendipity arts festival, wildcity, vogue india, vice media, and ACRI.
+        </p>
+        <p class="poppins" style="padding-top:15px">
+          my journey spans a tech career at google india, followed by grassroots work with folk artists and cultural organisations across rajasthan — experiences that continue to shape how i think about technology not as abstraction, but as something lived, shared, and deeply contextual.
+        </p>
+        <p class="poppins" style="padding-top:15px">
+          currently, i’m developing new performance formats like raga.exe, and expanding community-driven practices like code.drift — exploring what it means to design technology with care, context, and culture.
+        </p>
       </div>
+
+      <button id="toggle-bio-btn" class="block md:hidden mt-4 outfit text-sm font-bold underline cursor-pointer text-black hover:text-green-600">
+        read more ↓
+      </button>
+    </Card>
+  </div>
 
       <div class="col-span-2 space-y-4">
         <Card>
@@ -128,24 +135,22 @@ import profilepic from '../assets/nksonicphoto.png';
           </ul>
         </Card>
 
-        <Card>
+<Card>
           <h2 class="text-lg md:text-2xl lg:text-4xl mb-4 dm-serif">
             what i'm up to?
           </h2>
-          <ul class="flex gap-4 flex-wrap">
+          <ul class="flex flex-wrap gap-x-3 gap-y-4">
             {
               seeMore.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class="sanchez"
-                      href={item.url}
-                      target="_blank"
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
+                <li class="inline-block">
+                  <a
+                    class="sanchez block whitespace-nowrap text-xs md:text-sm bg-white text-black border-2 border-black rounded-full px-4 py-2 font-medium transition-all hover:bg-black hover:text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                    href={item.url}
+                    target="_blank"
+                    title={`Go to ${item.name}`}
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))
             }
@@ -156,3 +161,25 @@ import profilepic from '../assets/nksonicphoto.png';
     <RecentBlogPosts />
   </main>
 </Layout>
+
+<script>
+  const toggleBtn = document.getElementById('toggle-bio-btn');
+  const expandedBio = document.getElementById('expanded-bio');
+
+  if (toggleBtn && expandedBio) {
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = expandedBio.classList.contains('hidden');
+      
+      if (isHidden) {
+        expandedBio.classList.remove('hidden');
+        toggleBtn.innerText = 'read less ↑';
+      } else {
+        expandedBio.classList.add('hidden');
+        toggleBtn.innerText = 'read more ↓';
+        
+        // Optional: Smoothly scroll the user back to the top of the bio card when closing
+        toggleBtn.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+</script>
