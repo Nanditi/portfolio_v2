@@ -1,47 +1,36 @@
 ---
-title: Blogpost 5
-author: Elian Van Cutsem
-pubDate: 2023-02-19 18:37
+title: past/lives
+author: nanditi
+pubDate: 2025-11-01 18:37
 tags:
-  - Astro
-  - JavaScript
-  - Theme
-description: Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, vox nocte sedesque, decimo. Omnia esse, quam sive; conplevit illis indestrictus admovit dedit sub quod protectus, impedit non.
-imgUrl: '../../assets/astro.jpeg'
+  - album
+  - soundtrack
+  - live-coding
+description: can you remember a sound from your childhood? can you play it to yourself in your memory? - past/lives, my track on 'algorave india compilation one', is a response to this
+imgUrl: '../../assets/pastliveslandscape.png'
 layout: "../../layouts/BlogPost.astro"
 ---
 
-## Deorum petiit ignis
+## past/lives
 
-Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, *vox
-nocte sedesque*, decimo. Omnia esse, quam sive; conplevit illis indestrictus
-admovit dedit sub quod protectus, impedit non.
+### *can you remember a sound from your childhood? can you play it to yourself in your memory?*
 
-## Iovis late orbem Perseus sunt
 
-Aras reperire, sui motis correpti coniunx Onetor amore ferire lacertis, petiit.
-Bis pallor et mecum me, igne patruelibus *tendebam*, vultu sterilique terruerat
-*tempore* medium aera **eadem Mittor**.
+past/lives is a sonic offering to memory.
 
-- Non turba loca dederunt primordia ineamus Dictys
-- Tanti amat mundus sedula
-- Potuissent aetas parili coniuge se lumina breve
-- Tamen ille crepitantibus ulla coeperunt quibus iugulo
-- Pindusque solacia luctataque felix
+in this track, i trace my childhood in a music school tucked within the heritage folds of jaipur’s old city – where echoes of riyaaz, kathak, and birdsong mingled beneath a banyan tree.
+built on the regal gravity of raag darbari, the piece layers melody with memory, and speculation with sound – invoking voices from distant windows and long-forgotten courts through fragments of my own voice.
+past/lives is a homage to my gurus; both reflection and invocation – a reminder that what’s behind us never truly disappears.
 
-## Longum minus sic saepe
+*the past… lives. the track is a way of returning.*
 
-Genu cupiens quoque: cum dolor: sollicitive cantu, et piae Leuconoe, huius non
-nil tuli Peleusque rauca. Et alvum cuncti Hippodamas meritis nec coniunx ausa,
-pete. Congestaque nisi nullus poena. Tanto cum, curvis vulnera quod optatis,
-trahens conplexa saepe.
 
-Hominum quo. Signa germanaeque iuvat at feruntur precantibus corpus praebuerat
-excipit mixtaeque inferior, haec percepit regum: nec nec sit ferenti.
+past/lives is part of 'algorave india compilation tape I', a community-driven compilation album of algorithmic music from india.
 
-## Geminas namque quod referitur argenteus aderat superstes
+#### credits for past/lives
 
-Insistere pugno. Cum morae vigilantibus dulces Cycnus: neque cum sororis.
+nanditi - musician, composer, producer, vocals
 
-Hac Aestas solet docebo tandem tamquam omnis vitiantur mitte, vatis in animique
-infelix passimque. Superasset onus.
+avani vidhani - visual artist, zine creator
+
+special thanks to mehran shah for speech sample

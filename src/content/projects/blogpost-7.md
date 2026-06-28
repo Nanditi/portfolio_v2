@@ -7,9 +7,9 @@ tags:
   - workshop
   - deep listening
   - sound design
-imgUrl: '../../assets/astro.jpeg'
+imgUrl: '../../assets/echoes.jpg'
 layout: ../../layouts/BlogPost.astro
 ---
- *What does a place remember – and how do we listen to it?*
+ *what does a place remember – and how do we listen to it?*
 
-Echoes from Memory is a reflective, hands-on sound workshop that begins with memory as a source. Drawing from archives, personal recollections, and the immediate spaces, participants explore how places continue to sound long after moments have passed. Here, memory is not static or stored; it travels outward, leaving traces we can still hear.
+'echoes from memory' is a reflective, hands-on sound workshop that begins with memory as a source. drawing from archives, personal recollections, and the immediate spaces, participants explore how places continue to sound long after moments have passed. here, memory is not static or stored; it travels outward, leaving traces we can still hear.
