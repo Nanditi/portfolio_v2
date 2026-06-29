@@ -162,8 +162,8 @@ const parseLinks = (text: any) => {
   </main>
 
   {/* Keeps your "Recent Blog Posts" section at the very bottom! */}
-  <section class='p-6 bg-yellow-100'>
-    <h2 class="text-3xl font-bold outfit mb-8 text-center mt-6 lowercase">more projects</h2>
+  <section class='p-6 bg-yellow-100 more-projects-wrapper'>
+    <h2 class="text-3xl font-bold outfit mb-8 text-center mt-6 lowercase custom-more-header">more projects</h2>
     <RecentBlogPosts count={6} />
   </section>
 
@@ -178,6 +178,13 @@ const parseLinks = (text: any) => {
 </Layout>
 
 <style is:global>
+  /* --- HIDE REDUNDANT COMPONENT HEADER --- */
+  /* This specifically targets and hides the "Recent Projects" title coming from the imported 
+     component, leaving only our custom "more projects" title visible above it. */
+  .more-projects-wrapper h2:not(.custom-more-header) {
+    display: none !important;
+  }
+
   /* --- CUSTOM BRUTALIST SCROLLBAR FOR GALLERY --- */
   .brutal-scroll {
     scrollbar-width: auto;
