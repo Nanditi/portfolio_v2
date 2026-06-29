@@ -4,17 +4,50 @@ import MobileSocials from '@components/home/MobileSocials.astro';
 import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
-
-
 ---
 
 <Layout
-  title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+  title='About'
+  pageTitle='wander back home | about'
+  description='About nanditi and wander back home.'
 >
-  <main class='bg-pink p-6'>
+  <main class='bg-pink p-6 md:p-12 min-h-screen'>
     <MobileSocials />
     
+    <article class="max-w-4xl mx-auto mt-8 md:mt-12">
+      
+      {/* Page Header & Intro Text */}
+      <header class="mb-10">
+        <h1 class="text-5xl md:text-7xl font-bold outfit mb-4 lowercase tracking-tight">
+          about
+        </h1>
+        
+        <p class="text-xl md:text-2xl font-bold outfit lowercase tracking-wider text-black/70 mb-4">
+          musician &middot; livecoder &middot; cultural technologist
+        </p>
+        
+        <p class="text-lg md:text-xl font-medium text-black/90 max-w-3xl leading-relaxed lowercase">
+          this short talk is probably the fastest way to understand my work, practice, and the questions that keep bringing me back to sound, code, culture, and community.
+        </p>
+      </header>
+
+      {/* Brutalist Video Wrapper
+        'aspect-video' forces a perfect 16:9 ratio, while 'w-full' makes it responsive on all screens.
+      */}
+      <div class="w-full aspect-video border-4 border-black rounded-xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-black mb-12">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/RdGwFoOcKIM?si=aVdUZ8pFOekVIhpn" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      {/* You can start writing your about page text down here! */}
+      
+    </article>
   </main>
 </Layout>
