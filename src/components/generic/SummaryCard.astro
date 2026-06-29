@@ -24,5 +24,25 @@ const { title, imgAlt, imgSrc, description } = Astro.props;
     />
   </div>
   <p class='poppins'>{description}</p>
-  <slot />
+  
+  {/* Wrapped the slot in a custom class so we can target the tags inside it */}
+  <div class="summary-slot-content mt-4">
+    <slot />
+  </div>
 </Card>
+
+<style is:global>
+  /* This CSS automatically fixes the tags being passed into the <slot /> 
+    from the parent file, ensuring they never snap in half!
+  */
+  .summary-slot-content ul {
+    flex-wrap: wrap !important;
+    row-gap: 0.75rem !important; /* Gives breathing room when tags stack to the next line */
+  }
+  
+  .summary-slot-content li, 
+  .summary-slot-content a,
+  .summary-slot-content span {
+    white-space: nowrap !important; /* Prevents the text inside the pill from breaking */
+  }
+</style>

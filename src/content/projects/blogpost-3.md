@@ -1,6 +1,6 @@
 ---
 title: code.drift
-description: code.drift is a community practice of wandering, listening, and livecoding that turns cities into immersive audio-visual performances
+description: a community practice of wandering, listening, and livecoding that turns cities into immersive audio-visual performances
 pubDate: 2023-09-14 23:49
 author: nanditi
 tags: 

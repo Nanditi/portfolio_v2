@@ -1,47 +1,26 @@
 ---
-title: Blogpost 2
+title: blob labs
 pubDate: 12/31/2022 12:05
-author: "Elian Van Cutsem"
+author: nanditi
 tags:
-  - Astro
-  - WebDev
-  - Programming
-imgUrl: '../../assets/astro.jpeg'
-description: Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, vox nocte sedesque, decimo. Omnia esse, quam sive; conplevit illis indestrictus admovit dedit sub quod protectus, impedit non.
+- speculative futures
+- gen-z culture
+- participatory design
+imgUrl: '../../assets/blobbanner.gif'
+description: a speculative futures laboratory for gen-z, using storytelling, worldbuilding, and participatory design to explore the future of technology, identity, culture, and social life
 layout: '../../layouts/BlogPost.astro'
+role: "co-creator of blob labs"
+collaborators: "computational mama (co-creator)"
+credits: "an ajaibghar project"
+link: "https://www.youtube.com/watch?v=6N1Rv1qy8uE"
+linkText: "enter the blob"
+gallery:
+ - "../../assets/blobbanner.gif"
 ---
 
-## Deorum petiit ignis
+blob labs is an experimental research and futures lab designed to understand how emerging generations imagine the future of technology, culture, identity, and social life. through speculative design exercises, collaborative storytelling, role-play, worldbuilding, games, and creative workshops, participants explore themes such as friendship, governance, work, digital identity, social spaces, fashion, commerce, and community. 
 
-Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, *vox
-nocte sedesque*, decimo. Omnia esse, quam sive; conplevit illis indestrictus
-admovit dedit sub quod protectus, impedit non.
+rather than asking participants to predict the future, blob labs creates playful environments where they could collectively imagine desirable futures and articulate emerging needs, aspirations, and anxieties. the resulting insights are intended to inform the design, strategy, and visioning of future-facing technology products, platforms, and experiences. 
 
-## Iovis late orbem Perseus sunt
+developed through ajaibghar, the project treats imagination not simply as creativity, but as a valuable method for understanding how people want to live, connect, and create in the years to come.
 
-Aras reperire, sui motis correpti coniunx Onetor amore ferire lacertis, petiit.
-Bis pallor et mecum me, igne patruelibus *tendebam*, vultu sterilique terruerat
-*tempore* medium aera **eadem Mittor**.
-
-- Non turba loca dederunt primordia ineamus Dictys
-- Tanti amat mundus sedula
-- Potuissent aetas parili coniuge se lumina breve
-- Tamen ille crepitantibus ulla coeperunt quibus iugulo
-- Pindusque solacia luctataque felix
-
-## Longum minus sic saepe
-
-Genu cupiens quoque: cum dolor: sollicitive cantu, et piae Leuconoe, huius non
-nil tuli Peleusque rauca. Et alvum cuncti Hippodamas meritis nec coniunx ausa,
-pete. Congestaque nisi nullus poena. Tanto cum, curvis vulnera quod optatis,
-trahens conplexa saepe.
-
-Hominum quo. Signa germanaeque iuvat at feruntur precantibus corpus praebuerat
-excipit mixtaeque inferior, haec percepit regum: nec nec sit ferenti.
-
-## Geminas namque quod referitur argenteus aderat superstes
-
-Insistere pugno. Cum morae vigilantibus dulces Cycnus: neque cum sororis.
-
-Hac Aestas solet docebo tandem tamquam omnis vitiantur mitte, vatis in animique
-infelix passimque. Superasset onus.
