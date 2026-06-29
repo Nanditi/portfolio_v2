@@ -1,13 +1,47 @@
 ---
 import Layout from './Default.astro';
-import BlogSideBar from '@components/blog/BlogSideBar.astro';
-import BlogContent from '@components/blog/BlogContent.astro';
 import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
 
+// Keeps your automatic social media preview images working!
 const ogImage = new URL(`/v1/generate/og/${Astro.params.slug}.png`, Astro.url);
 
-const { content, headings } = Astro.props;
-const { title, description } = content;
+// This grabs all the data from your markdown files
+const { content } = Astro.props;
+// Added 'link' and 'linkText' here so Astro knows to look for it!
+const { title, description, venue, role, collaborators, credits, gallery, link, linkText } = content;
+
+// --- SMART IMAGE RESOLVER ---
+// This automatically finds your images in the assets folder so the carousel doesn't break
+const allImages = import.meta.glob('/src/assets/**/*.{png,jpg,jpeg,webp,gif}', { eager: true });
+
+const getImageUrl = (imagePath: string) => {
+  if (!imagePath) return '';
+  if (imagePath.startsWith('http') || imagePath.startsWith('/')) return imagePath;
+  
+  // Extract just the file name (e.g. 'pastliveslandscape.png')
+  const fileName = imagePath.split('/').pop();
+  
+  // Look for it in the assets folder
+  const match = Object.keys(allImages).find(key => key.endsWith(`/${fileName}`));
+  
+  if (match) {
+    const mod = allImages[match] as any;
+    return mod.default?.src || mod.default || mod;
+  }
+  
+  return imagePath; // Fallback
+};
+
+// --- SMART LINK PARSER ---
+// This allows you to use standard markdown links [text](url) inside ANY of your frontmatter details!
+const parseLinks = (text: any) => {
+  if (!text) return '';
+  // Replaces [text](url) with a styled HTML anchor tag
+  return text.toString().replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g, 
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline decoration-2 underline-offset-4 font-bold hover:bg-yellow-300 transition-colors">$1</a>'
+  );
+};
 ---
 
 <Layout
@@ -15,13 +49,258 @@ const { title, description } = content;
   description={description as string}
   ogImage={ogImage}
 >
-  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center'>
-    <BlogSideBar headings={headings} />
-    <BlogContent content={content}>
-      <slot />
-    </BlogContent>
+  <main class="bg-white text-black px-6 py-12 md:py-20 border-b-4 border-black relative">
+    <article class="max-w-4xl mx-auto">
+      
+      {/* --- HERO HEADER --- */}
+      <header class="mb-12 border-b-4 border-black pb-8">
+        <h1 class="text-5xl md:text-7xl font-bold outfit mb-6 leading-tight lowercase">
+          {title}
+        </h1>
+      </header>
+
+      <div class="flex flex-col md:flex-row gap-12">
+        
+        {/* --- LEFT COLUMN: GALLERY & MAIN CONTENT --- */}
+        <div class="md:w-2/3 flex flex-col gap-10 min-w-0">
+          
+          {/* --- GALLERY CAROUSEL (Wrapped in a Brutalist Window) --- */}
+          {gallery && gallery.length > 0 && (
+            <section class="w-full mb-2">
+              <div class="border-4 border-black rounded-xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white flex flex-col">
+                
+                {/* Window Header Bar */}
+                <div class="bg-black text-white px-5 py-3 flex justify-between items-center border-b-4 border-black">
+                   <span class="text-sm font-bold tracking-widest lowercase">gallery</span>
+                   <span class="text-sm font-bold lowercase text-white/80">swipe / scroll &rarr;</span>
+                </div>
+
+                {/* Scrolling Content Area - Added 'shadow-inner' for recessed effect */}
+                <div class="flex flex-nowrap overflow-x-auto gap-6 p-6 snap-x snap-mandatory brutal-scroll items-center bg-[#f4f4f5] shadow-inner">
+                  {gallery.map((image: string) => (
+                    <img 
+                      src={getImageUrl(image)} 
+                      alt="Project gallery image"
+                      title="Click to expand"
+                      class="gallery-image cursor-pointer shrink-0 h-[250px] md:h-[350px] w-auto max-w-[95%] snap-center object-contain border-4 border-black rounded-lg bg-white transition-transform duration-300 hover:scale-[1.02]"
+                    />
+                  ))}
+                </div>
+                
+              </div>
+            </section>
+          )}
+
+          {/* --- MAIN CONTENT (Markdown Slot) --- */}
+          <div class="project-content">
+            {/* This <slot /> is where your markdown text automatically goes */}
+            <slot />
+          </div>
+
+        </div>
+
+        {/* --- RIGHT COLUMN: PROJECT NOTES / METADATA SIDEBAR --- */}
+        <aside class="md:w-1/3">
+          <div class="bg-[#bbf7d0] border-4 border-black rounded-xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <h3 class="text-2xl font-bold outfit mb-6 lowercase tracking-wider border-b-2 border-black pb-2">
+              project details
+            </h3>
+            
+            <dl class="flex flex-col gap-4">
+              {venue && (
+                <div>
+                  <dt class="font-bold lowercase text-sm text-black/60">venue / location</dt>
+                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(venue)} />
+                </div>
+              )}
+              
+              {role && (
+                <div>
+                  <dt class="font-bold lowercase text-sm text-black/60">my role</dt>
+                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(role)} />
+                </div>
+              )}
+
+              {collaborators && (
+                <div>
+                  <dt class="font-bold lowercase text-sm text-black/60">collaborators</dt>
+                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(collaborators)} />
+                </div>
+              )}
+
+              {credits && (
+                <div>
+                  <dt class="font-bold lowercase text-sm text-black/60">credits</dt>
+                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(credits)} />
+                </div>
+              )}
+              
+              {/* Fallback if no specific fields are provided */}
+              {!venue && !role && !collaborators && !credits && !link && (
+                 <p class="text-black/70 italic text-sm lowercase">more details inside the project notes.</p>
+              )}
+            </dl>
+
+            {/* --- NEW CONDITIONAL LINK BUTTON --- */}
+            {link && (
+              <div class="mt-6">
+                <a 
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="block w-full text-center bg-white border-2 border-black px-4 py-3 font-bold lowercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                >
+                  {linkText ? linkText : 'view project'} &rarr;
+                </a>
+              </div>
+            )}
+          </div>
+        </aside>
+
+      </div>
+    </article>
   </main>
-  <section class='p-6'>
+
+  {/* Keeps your "Recent Blog Posts" section at the very bottom! */}
+  <section class='p-6 bg-yellow-100'>
+    <h2 class="text-3xl font-bold outfit mb-8 text-center mt-6 lowercase">more projects</h2>
     <RecentBlogPosts count={6} />
   </section>
+
+  {/* --- BRUTALIST LIGHTBOX MODAL --- */}
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-black/90 p-6 md:p-12 transition-opacity">
+    <button id="lightbox-close" class="absolute top-4 right-4 md:top-8 md:right-8 bg-white text-black border-4 border-black font-bold uppercase tracking-widest px-4 py-2 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:bg-yellow-300 hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] transition-all z-50">
+      close
+    </button>
+    <img id="lightbox-img" src="" alt="Expanded view" class="max-w-full max-h-[85vh] object-contain border-4 border-black bg-white shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]" />
+  </div>
+
 </Layout>
+
+<style is:global>
+  /* --- CUSTOM BRUTALIST SCROLLBAR FOR GALLERY --- */
+  .brutal-scroll {
+    scrollbar-width: auto;
+    scrollbar-color: black #ffffff;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .brutal-scroll::-webkit-scrollbar {
+    height: 16px; 
+    -webkit-appearance: none;
+  }
+  
+  .brutal-scroll::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border: 3px solid black;
+  }
+  
+  .brutal-scroll::-webkit-scrollbar-thumb {
+    background: #fef08a; /* Bright yellow */
+    border: 3px solid black;
+  }
+  
+  .brutal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #facc15; /* Darker yellow on hover */
+  }
+
+  /* --- NORMAL MARKDOWN STYLING --- */
+  .project-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .project-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-content p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-content ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .project-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-content img {
+    width: 100%;
+    height: auto;
+    border: 4px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    margin: 2rem 0;
+  }
+
+  .project-content a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 600;
+  }
+  
+  .project-content a:hover {
+    background-color: #fef08a;
+  }
+</style>
+
+<script>
+  // --- LIGHTBOX INTERACTIVITY LOGIC ---
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const closeBtn = document.getElementById('lightbox-close');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+
+    if (!modal || !modalImg || !closeBtn) return;
+
+    // Open lightbox when a gallery image is clicked
+    galleryImages.forEach((img) => {
+      img.addEventListener('click', (e) => {
+        const target = e.target as HTMLImageElement;
+        modalImg.src = target.src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden'; // Stop background page from scrolling
+      });
+    });
+
+    // Function to close the lightbox
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = ''; // Restore page scroll
+    };
+
+    // Close on button click
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on background click (clicking anywhere outside the image)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  });
+</script>
