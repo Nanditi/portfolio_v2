@@ -10,7 +10,7 @@ tags:
 imgUrl: '../../assets/echoes.jpg'
 layout: ../../layouts/BlogPost.astro
 role: "lead facilitator"
-collaborators: beatnyk (co lead facilitator)
+collaborators: "beatnyk (co lead facilitator)"
 credits: "organised at: art is life festival 2026 at MAP museum bengaluru"
 link: "https://map-india.org/map-events/echoes-from-memory-coding-workshop/"
 linkText: "view event"

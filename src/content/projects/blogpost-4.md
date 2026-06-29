@@ -1,47 +1,32 @@
 ---
-title: Blogpost 4
-author: Elian Van Cutsem
-pubDate: 2023-02-15 12:00
+title: main jo karti, wo kyun karti
+author: nanditi
+pubDate: 2026-03-07 12:00
 tags:
-  - Astro
-  - JavaScript
-  - Web Development
-description: Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, vox nocte sedesque, decimo. Omnia esse, quam sive; conplevit illis indestrictus admovit dedit sub quod protectus, impedit non.
-imgUrl: '../../assets/astro.jpeg'
+  - sound design
+  - folk music
+  - theatrical production
+description: "theatrical folk musical created with women folk musicians from across rajasthan; exploring memory, artistic identity, and womanhood through music, theatre, and collaborative storytelling"
+imgUrl: '../../assets/mjkbts2.jpg'
 layout: "../../layouts/BlogPost.astro"
+role: "sound design"
+collaborators: "suruchi sharma (director), supriya (project lead), mewa ji, mamta sapera, prem ji, kamla devi, hanifa bai"
+credits: "organised at: jawahar kala kendra | jaisalmer fort | nila house | the rajkumari ratnavati girls school"
+# link: "https://map-india.org/map-events/echoes-from-memory-coding-workshop/"
+# linkText: "view event"
+gallery:
+  - "../../assets/mjkfort1.jpeg"
+  - "../../assets/mjkfort2.jpeg"
+  - "../../assets/mjkjkk1.jpg"
+  - "../../assets/mjkbts1.jpg"
+  - "../../assets/mjknila1.gif"
+  - "../../assets/mjknila2.jpg"
+  - "../../assets/mjkbts2.jpg"
+  - "../../assets/mjkschool1.jpg"
 ---
 
-## Deorum petiit ignis
+*main jo karti, wo kyu karti* is an experimental theatrical folk musical created with women folk musicians from diverse communities across rajasthan. developed through an intensive residential workshop process, the project creates a space for reflection, expression, friendship, and artistic exploration among women whose creative aspirations often remain invisible or unsupported within their social contexts.
 
-Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, *vox
-nocte sedesque*, decimo. Omnia esse, quam sive; conplevit illis indestrictus
-admovit dedit sub quod protectus, impedit non.
+the workshops themselves are as important as the final performance — offering a rare opportunity for participants to share personal histories, memories, dreams, humour, and artistic identities through conversation, music, and theatre. bringing together women artists from both rural and urban backgrounds, the project became an exercise in collective listening and collaborative world-building.
 
-## Iovis late orbem Perseus sunt
-
-Aras reperire, sui motis correpti coniunx Onetor amore ferire lacertis, petiit.
-Bis pallor et mecum me, igne patruelibus *tendebam*, vultu sterilique terruerat
-*tempore* medium aera **eadem Mittor**.
-
-- Non turba loca dederunt primordia ineamus Dictys
-- Tanti amat mundus sedula
-- Potuissent aetas parili coniuge se lumina breve
-- Tamen ille crepitantibus ulla coeperunt quibus iugulo
-- Pindusque solacia luctataque felix
-
-## Longum minus sic saepe
-
-Genu cupiens quoque: cum dolor: sollicitive cantu, et piae Leuconoe, huius non
-nil tuli Peleusque rauca. Et alvum cuncti Hippodamas meritis nec coniunx ausa,
-pete. Congestaque nisi nullus poena. Tanto cum, curvis vulnera quod optatis,
-trahens conplexa saepe.
-
-Hominum quo. Signa germanaeque iuvat at feruntur precantibus corpus praebuerat
-excipit mixtaeque inferior, haec percepit regum: nec nec sit ferenti.
-
-## Geminas namque quod referitur argenteus aderat superstes
-
-Insistere pugno. Cum morae vigilantibus dulces Cycnus: neque cum sororis.
-
-Hac Aestas solet docebo tandem tamquam omnis vitiantur mitte, vatis in animique
-infelix passimque. Superasset onus.
+as the sound designer for the production, i developed a live-coded sonic language using sonic pi, creating soundscapes that responded to the emotional, theatrical, and cinematic sensibilities of the work. collaborating closely with filmmaker and director Suruchi Sharma, i explored how livecoding could become part of a contemporary theatrical vocabulary rooted in the voices, experiences, and musical traditions of rajasthan.
