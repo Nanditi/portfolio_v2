@@ -9,9 +9,9 @@ tags:
 description: can you remember a sound from your childhood? can you play it to yourself in your memory? - past/lives, my track on 'algorave india compilation one', is a response to this
 imgUrl: '../../assets/pastliveslandscape.png'
 layout: "../../layouts/BlogPost.astro"
-role: "Musician, Composer, Producer, Vocals"
-collaborators: "Avani Vidhani (Visuals, Zine)"
-credits: "Part of '[Algorave India Compilation Tape 1](https://music.algorave.in/compilation-one/index.html)'"
+role: "musician, composer, producer, vocals"
+collaborators: "avani vidhani (visuals, zine)"
+credits: "part of '[algorave india compilation tape I](https://music.algorave.in/compilation-one/index.html)'"
 link: "https://antarikshrecords.bandcamp.com/track/nanditi-past-lives"
 linkText: "listen to the track"
 gallery:

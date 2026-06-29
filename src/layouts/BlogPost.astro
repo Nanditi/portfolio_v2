@@ -110,28 +110,28 @@ const parseLinks = (text: any) => {
               {venue && (
                 <div>
                   <dt class="font-bold lowercase text-sm text-black/60">venue / location</dt>
-                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(venue)} />
+                  <dd class="font-medium text-lg" set:html={parseLinks(venue)} />
                 </div>
               )}
               
               {role && (
                 <div>
                   <dt class="font-bold lowercase text-sm text-black/60">my role</dt>
-                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(role)} />
+                  <dd class="font-medium text-lg" set:html={parseLinks(role)} />
                 </div>
               )}
 
               {collaborators && (
                 <div>
                   <dt class="font-bold lowercase text-sm text-black/60">collaborators</dt>
-                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(collaborators)} />
+                  <dd class="font-medium text-lg" set:html={parseLinks(collaborators)} />
                 </div>
               )}
 
               {credits && (
                 <div>
                   <dt class="font-bold lowercase text-sm text-black/60">credits</dt>
-                  <dd class="font-medium text-lg lowercase" set:html={parseLinks(credits)} />
+                  <dd class="font-medium text-lg" set:html={parseLinks(credits)} />
                 </div>
               )}
               
@@ -148,7 +148,7 @@ const parseLinks = (text: any) => {
                   href={link} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  class="block w-full text-center bg-white border-2 border-black px-4 py-3 font-bold lowercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  class="block w-full text-center bg-white border-2 border-black px-4 py-3 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                 >
                   {linkText ? linkText : 'view project'} &rarr;
                 </a>
@@ -268,46 +268,44 @@ const parseLinks = (text: any) => {
 </style>
 
 <script>
-  // --- LIGHTBOX INTERACTIVITY LOGIC ---
-  document.addEventListener('DOMContentLoaded', () => {
+  // --- BULLETPROOF LIGHTBOX LOGIC (Event Delegation) ---
+  // Using global event listeners ensures this works perfectly with Astro's 
+  // View Transitions and fast client-side routing.
+  
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
     const modal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
-    const closeBtn = document.getElementById('lightbox-close');
-    const galleryImages = document.querySelectorAll('.gallery-image');
 
-    if (!modal || !modalImg || !closeBtn) return;
+    if (!modal || !modalImg) return;
 
-    // Open lightbox when a gallery image is clicked
-    galleryImages.forEach((img) => {
-      img.addEventListener('click', (e) => {
-        const target = e.target as HTMLImageElement;
-        modalImg.src = target.src;
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden'; // Stop background page from scrolling
-      });
-    });
-
-    // Function to close the lightbox
-    const closeModal = () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = ''; // Restore page scroll
-    };
-
-    // Close on button click
-    closeBtn.addEventListener('click', closeModal);
-
-    // Close on background click (clicking anywhere outside the image)
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    // Close on Escape key press
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
+    // 1. Open the lightbox if a gallery image is clicked
+    if (target.classList.contains('gallery-image')) {
+      modalImg.src = (target as HTMLImageElement).src;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // Stop background scrolling
+    }
+    
+    // 2. Close the lightbox if the background or close button is clicked
+    else if (!modal.classList.contains('hidden')) {
+      if (target.id === 'lightbox-close' || target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = ''; // Restore background scrolling
       }
-    });
+    }
+  });
+
+  // 3. Close the lightbox on 'Escape' key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
   });
 </script>
